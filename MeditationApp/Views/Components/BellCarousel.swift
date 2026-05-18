@@ -31,21 +31,20 @@ struct BellCarousel: View {
             }
             .padding(.horizontal, 20)
 
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 18) {
-                    ForEach(Bell.allCases, id: \.self) { bell in
-                        BellCell(
-                            bell: bell,
-                            isSelected: active == bell,
-                            onTap: {
-                                if mode == .start { startBell = bell } else { endBell = bell }
-                                onPreview(bell)
-                            }
-                        )
-                    }
+            HStack(spacing: 0) {
+                ForEach(Bell.allCases, id: \.self) { bell in
+                    BellCell(
+                        bell: bell,
+                        isSelected: active == bell,
+                        onTap: {
+                            if mode == .start { startBell = bell } else { endBell = bell }
+                            onPreview(bell)
+                        }
+                    )
+                    .frame(maxWidth: .infinity)
                 }
-                .padding(.horizontal, 20)
             }
+            .padding(.horizontal, 12)
         }
     }
 }
@@ -61,9 +60,9 @@ private struct BellCell: View {
                 ZStack {
                     Circle()
                         .fill(isSelected ? Color.white : Color.white.opacity(0.07))
-                        .frame(width: 62, height: 62)
+                        .frame(width: 56, height: 56)
                     Image(systemName: bell.icon)
-                        .font(.system(size: 22))
+                        .font(.system(size: 20))
                         .foregroundStyle(isSelected ? Color.black : Color.white.opacity(0.55))
                 }
                 Text(bell.displayName)
