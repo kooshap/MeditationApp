@@ -66,7 +66,7 @@ final class MeditationViewModel {
 
     func pause() {
         guard timerState == .running else { return }
-        remaining      = max(sessionEndDate?.timeIntervalSinceNow ?? remaining, 0)
+        // Keep the integer remaining as-is — no clock reconciliation needed
         sessionEndDate = nil
         timerState     = .paused
         timer?.invalidate()
@@ -115,8 +115,7 @@ final class MeditationViewModel {
     }
 
     private func tick() {
-        guard let endDate = sessionEndDate else { return }
-        remaining = max(endDate.timeIntervalSinceNow, 0)
+        remaining = max(remaining - 1, 0)
         if remaining == 0 { complete() }
     }
 
@@ -135,7 +134,7 @@ final class MeditationViewModel {
     }
 
     private func scheduleTimer() {
-        let t = Timer(timeInterval: 0.5, repeats: true) { [weak self] _ in self?.tick() }
+        let t = Timer(timeInterval: 1.0, repeats: true) { [weak self] _ in self?.tick() }
         RunLoop.main.add(t, forMode: .common)
         timer = t
     }
@@ -162,8 +161,13 @@ final class MeditationViewModel {
         ) { [weak self] _ in
             Task { @MainActor [weak self] in
                 guard let self, self.timerState == .running else { return }
-                if let end = self.sessionEndDate, end.timeIntervalSinceNow <= 0 {
+                guard let end = self.sessionEndDate else { return }
+                let clockRemaining = end.timeIntervalSinceNow
+                if clockRemaining <= 0 {
                     self.complete()
+                } else {
+                    // Snap display to clock reality after returning from background
+                    self.remaining = ceil(clockRemaining)
                 }
             }
         }
