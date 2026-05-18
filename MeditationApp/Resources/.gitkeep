@@ -1,0 +1,9 @@
+Drop bell audio files here as MP3s — one per Bell enum case:
+  tibetan.mp3
+  zen_bowl.mp3
+  crystal.mp3
+  chime.mp3
+  gong.mp3
+
+Free high-quality sources: freesound.org, zapsplat.com
+Keep files under ~200KB each (short strike, natural decay).
