@@ -5,11 +5,11 @@ struct StartButtonStyle: ButtonStyle {
         configuration.label
             .font(.title3.weight(.light))
             .foregroundStyle(.black)
-            .frame(width: 160, height: 54)
+            .frame(width: 88, height: 88)
             .background(Color.white)
-            .clipShape(Capsule())
+            .clipShape(Circle())
             .opacity(configuration.isPressed ? 0.75 : 1)
-            .scaleEffect(configuration.isPressed ? 0.97 : 1)
+            .scaleEffect(configuration.isPressed ? 0.95 : 1)
             .animation(.easeOut(duration: 0.12), value: configuration.isPressed)
     }
 }
