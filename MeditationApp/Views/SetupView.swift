@@ -27,9 +27,6 @@ struct SetupView: View {
                         onPreview: { vm.previewBell($0) }
                     )
 
-                    SettingsSummary(settings: vm.settings)
-                        .padding(.horizontal, 24)
-
                     VolumeSliderView(volume: $vm.settings.volume)
                         .padding(.horizontal, 24)
 

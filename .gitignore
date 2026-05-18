@@ -5,3 +5,4 @@ DerivedData/
 build/
 *.xcuserstate
 .swiftpm/
+MeditationApp/Resources/*.mp3

@@ -18,7 +18,10 @@ final class MeditationViewModel {
     var showPermissionPrompt   = false
 
     var settings: SessionSettings {
-        didSet { settings.save() }
+        didSet {
+            settings.save()
+            audio.updateVolume(settings.volume)
+        }
     }
 
     // MARK: — Private

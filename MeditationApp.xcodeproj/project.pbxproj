@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA01000000000001 /* chime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000001 /* chime.mp3 */; };
+		AA01000000000002 /* crystal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000002 /* crystal.mp3 */; };
+		AA01000000000003 /* gong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000003 /* gong.mp3 */; };
+		AA01000000000004 /* tibetan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000004 /* tibetan.mp3 */; };
+		AA01000000000005 /* zen_bowl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000005 /* zen_bowl.mp3 */; };
+		1D4F2922FF6CAA0B4E269365 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B468FF730D6DC734640C86 /* AudioEngine.swift */; };
+		38A6427FA4616D4F5705C170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC6EB5166AEF1573515805E /* Assets.xcassets */; };
+		6E3D0C9EC3227148D58F8C6D /* BellCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FEBE5786B45501D6C7479 /* BellCarousel.swift */; };
+		70BDB7D89FAD200DFE3065E5 /* SessionCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBEB60FF0B954723EFC1AC1 /* SessionCompleteView.swift */; };
+		70EB23555D66562117940260 /* Bell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F4B719E08C4FE5BDE789E7 /* Bell.swift */; };
+		97715A0F24EAB408A8F4DA11 /* SessionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BC409316A7359610F0902E /* SessionSettings.swift */; };
+		9BBC89149FC532AE1A62CE9B /* BackgroundTimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2901C81C315E19C933DAF6 /* BackgroundTimerService.swift */; };
+		BA01ED65D297A0087EB30D84 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4F972020EA4C6E9CB5079 /* SetupView.swift */; };
+		BF7CCB544F34D6816F93DA20 /* ActiveTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BB94113BC444A75E16F85 /* ActiveTimerView.swift */; };
+		CBAE89D596C852223BDD02D3 /* MeditationAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAAB4F242AEB7901B58BF0 /* MeditationAppApp.swift */; };
+		CBF67D0AE5C887C81BE28CE3 /* DurationWheelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CB3BF02009954DF1749D84 /* DurationWheelPicker.swift */; };
+		D0CDAB23457C9A6EB2241E43 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A1CDE147C6F0A49A37433 /* MeditationViewModel.swift */; };
+		D39A17E4F5A09C4B769D8878 /* VolumeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FB257CB48B3DA775662CA6 /* VolumeSliderView.swift */; };
+		ECA99895E514B13950BE1882 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021A93C9E7BDF5D08FABDAC0 /* ButtonStyles.swift */; };
+		F2931EFE3003E6AE28F3BE9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F07067859AD7042582C7E /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01CB3BF02009954DF1749D84 /* DurationWheelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationWheelPicker.swift; sourceTree = "<group>"; };
+		021A93C9E7BDF5D08FABDAC0 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		055BB94113BC444A75E16F85 /* ActiveTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTimerView.swift; sourceTree = "<group>"; };
+		26BC409316A7359610F0902E /* SessionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSettings.swift; sourceTree = "<group>"; };
+		34FB257CB48B3DA775662CA6 /* VolumeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSliderView.swift; sourceTree = "<group>"; };
+		3A2901C81C315E19C933DAF6 /* BackgroundTimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimerService.swift; sourceTree = "<group>"; };
+		796A1CDE147C6F0A49A37433 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
+		7FC4F972020EA4C6E9CB5079 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		8BC6EB5166AEF1573515805E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9CBEB60FF0B954723EFC1AC1 /* SessionCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCompleteView.swift; sourceTree = "<group>"; };
+		A4DAAB4F242AEB7901B58BF0 /* MeditationAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationAppApp.swift; sourceTree = "<group>"; };
+		AB67BD8F5BC0AEBC8555BDDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D63FEBE5786B45501D6C7479 /* BellCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BellCarousel.swift; sourceTree = "<group>"; };
+		D8F4B719E08C4FE5BDE789E7 /* Bell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bell.swift; sourceTree = "<group>"; };
+		E24F07067859AD7042582C7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E2B468FF730D6DC734640C86 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		AA02000000000001 /* chime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chime.mp3; sourceTree = "<group>"; };
+		AA02000000000002 /* crystal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crystal.mp3; sourceTree = "<group>"; };
+		AA02000000000003 /* gong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gong.mp3; sourceTree = "<group>"; };
+		AA02000000000004 /* tibetan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tibetan.mp3; sourceTree = "<group>"; };
+		AA02000000000005 /* zen_bowl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = zen_bowl.mp3; sourceTree = "<group>"; };
+		EBA0342FC12AF5F4CD87901F /* MeditationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		00B1F00E9E40357539C74FAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A53B2C128D765CCC373005D /* Components */,
+				857CBEB2719FEAC3B59818DE /* Styles */,
+				055BB94113BC444A75E16F85 /* ActiveTimerView.swift */,
+				9CBEB60FF0B954723EFC1AC1 /* SessionCompleteView.swift */,
+				7FC4F972020EA4C6E9CB5079 /* SetupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		148E9A8C08A77C4E63106A75 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				796A1CDE147C6F0A49A37433 /* MeditationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1E0512BEA5BF059F92C59C86 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D8F4B719E08C4FE5BDE789E7 /* Bell.swift */,
+				26BC409316A7359610F0902E /* SessionSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A4AFC9B2E97336DC4302E02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBA0342FC12AF5F4CD87901F /* MeditationApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A53B2C128D765CCC373005D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D63FEBE5786B45501D6C7479 /* BellCarousel.swift */,
+				01CB3BF02009954DF1749D84 /* DurationWheelPicker.swift */,
+				34FB257CB48B3DA775662CA6 /* VolumeSliderView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		857CBEB2719FEAC3B59818DE /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				021A93C9E7BDF5D08FABDAC0 /* ButtonStyles.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		BC85337A502BE4BDE2381970 = {
+			isa = PBXGroup;
+			children = (
+				E736166E8C28E5816C45C9E5 /* MeditationApp */,
+				5A4AFC9B2E97336DC4302E02 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CBAB3191936727686D30F5F8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E2B468FF730D6DC734640C86 /* AudioEngine.swift */,
+				3A2901C81C315E19C933DAF6 /* BackgroundTimerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AA03000000000001 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA02000000000001 /* chime.mp3 */,
+				AA02000000000002 /* crystal.mp3 */,
+				AA02000000000003 /* gong.mp3 */,
+				AA02000000000004 /* tibetan.mp3 */,
+				AA02000000000005 /* zen_bowl.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E736166E8C28E5816C45C9E5 /* MeditationApp */ = {
+			isa = PBXGroup;
+			children = (
+				1E0512BEA5BF059F92C59C86 /* Models */,
+				CBAB3191936727686D30F5F8 /* Services */,
+				148E9A8C08A77C4E63106A75 /* ViewModels */,
+				00B1F00E9E40357539C74FAC /* Views */,
+				AA03000000000001 /* Resources */,
+				8BC6EB5166AEF1573515805E /* Assets.xcassets */,
+				E24F07067859AD7042582C7E /* ContentView.swift */,
+				AB67BD8F5BC0AEBC8555BDDA /* Info.plist */,
+				A4DAAB4F242AEB7901B58BF0 /* MeditationAppApp.swift */,
+			);
+			path = MeditationApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C1BA71C1DD4D29B1B8BEA227 /* MeditationApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5564A5F94255027F8BDC48B1 /* Build configuration list for PBXNativeTarget "MeditationApp" */;
+			buildPhases = (
+				ACEB7ADD75005381589BCC32 /* Sources */,
+				AFEB0961A3AEF9758C25F69B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeditationApp;
+			packageProductDependencies = (
+			);
+			productName = MeditationApp;
+			productReference = EBA0342FC12AF5F4CD87901F /* MeditationApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		73F8AEC9AABF7AFDFAD5FC0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = B375DD6496AF0D17B783224E /* Build configuration list for PBXProject "MeditationApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = BC85337A502BE4BDE2381970;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5A4AFC9B2E97336DC4302E02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C1BA71C1DD4D29B1B8BEA227 /* MeditationApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFEB0961A3AEF9758C25F69B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38A6427FA4616D4F5705C170 /* Assets.xcassets in Resources */,
+				AA01000000000001 /* chime.mp3 in Resources */,
+				AA01000000000002 /* crystal.mp3 in Resources */,
+				AA01000000000003 /* gong.mp3 in Resources */,
+				AA01000000000004 /* tibetan.mp3 in Resources */,
+				AA01000000000005 /* zen_bowl.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACEB7ADD75005381589BCC32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF7CCB544F34D6816F93DA20 /* ActiveTimerView.swift in Sources */,
+				1D4F2922FF6CAA0B4E269365 /* AudioEngine.swift in Sources */,
+				9BBC89149FC532AE1A62CE9B /* BackgroundTimerService.swift in Sources */,
+				70EB23555D66562117940260 /* Bell.swift in Sources */,
+				6E3D0C9EC3227148D58F8C6D /* BellCarousel.swift in Sources */,
+				ECA99895E514B13950BE1882 /* ButtonStyles.swift in Sources */,
+				F2931EFE3003E6AE28F3BE9D /* ContentView.swift in Sources */,
+				CBF67D0AE5C887C81BE28CE3 /* DurationWheelPicker.swift in Sources */,
+				CBAE89D596C852223BDD02D3 /* MeditationAppApp.swift in Sources */,
+				D0CDAB23457C9A6EB2241E43 /* MeditationViewModel.swift in Sources */,
+				70BDB7D89FAD200DFE3065E5 /* SessionCompleteView.swift in Sources */,
+				97715A0F24EAB408A8F4DA11 /* SessionSettings.swift in Sources */,
+				BA01ED65D297A0087EB30D84 /* SetupView.swift in Sources */,
+				D39A17E4F5A09C4B769D8878 /* VolumeSliderView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0E91DBF72A5D124B463B0DA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5D71DAE1DD768B0B1A7CF6BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5CXRXAQ8VY;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MeditationApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = minimal.meditation.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.10;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7E70B82E7FFCA3BECFE8875C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5CXRXAQ8VY;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MeditationApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = minimal.meditation.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.10;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		9FED93B1F5943620F70CE5FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5564A5F94255027F8BDC48B1 /* Build configuration list for PBXNativeTarget "MeditationApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D71DAE1DD768B0B1A7CF6BD /* Debug */,
+				7E70B82E7FFCA3BECFE8875C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B375DD6496AF0D17B783224E /* Build configuration list for PBXProject "MeditationApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E91DBF72A5D124B463B0DA8 /* Debug */,
+				9FED93B1F5943620F70CE5FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 73F8AEC9AABF7AFDFAD5FC0D /* Project object */;
+}
