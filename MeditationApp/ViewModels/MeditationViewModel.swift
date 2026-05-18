@@ -96,13 +96,19 @@ final class MeditationViewModel {
 
     private func startSession() {
         let duration = TimeInterval(settings.totalSeconds)
-        sessionEndDate = Date().addingTimeInterval(duration)
         remaining  = duration
         timerState = .running
         screen     = .activeTimer
         audio.play(settings.startBell, volume: settings.volume)
-        background.scheduleEnd(after: duration, bell: settings.endBell)
-        scheduleTimer()
+
+        // Delay countdown until the screen transition finishes (0.55s in ContentView)
+        // so the first second is never visually clipped
+        Task {
+            try? await Task.sleep(for: .milliseconds(600))
+            sessionEndDate = Date().addingTimeInterval(remaining)
+            background.scheduleEnd(after: remaining, bell: settings.endBell)
+            scheduleTimer()
+        }
     }
 
     private func tick() {
