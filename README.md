@@ -6,19 +6,11 @@ A minimalist, fully offline meditation timer for iOS. No accounts, no network, n
 
 - Xcode 16+
 - iOS 17+ deployment target
-- [XcodeGen](https://github.com/yonatanKreiner/XcodeGen) to generate the `.xcodeproj`
 
 ## Setup
 
 ```bash
-# Install XcodeGen if needed
-brew install xcodegen
-
-# Generate the Xcode project
-cd /path/to/MeditationApp
-xcodegen generate
-
-# Open in Xcode
+git clone <repo-url>
 open MeditationApp.xcodeproj
 ```
 
@@ -56,7 +48,6 @@ MeditationApp/
     ├── Components/
     │   ├── DurationWheelPicker.swift  — UIPickerView (UIViewRepresentable) with haptics
     │   ├── BellCarousel.swift         — Horizontal bell selector with instant audio preview
-    │   ├── SettingsSummary.swift      — Summary row (duration, start/end bell)
     │   └── VolumeSliderView.swift
     └── Styles/
         └── ButtonStyles.swift     — StartButtonStyle, TimerControlStyle
