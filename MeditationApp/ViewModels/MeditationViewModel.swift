@@ -2,6 +2,7 @@ import Foundation
 import Observation
 import AVFoundation
 import UIKit
+import UserNotifications
 
 @Observable
 @MainActor
@@ -11,9 +12,10 @@ final class MeditationViewModel {
     enum TimerState: Equatable { case idle, running, paused }
 
     // MARK: — State
-    var screen: AppScreen    = .setup
+    var screen: AppScreen      = .setup
     var timerState: TimerState = .idle
     var remaining: TimeInterval = 0
+    var showPermissionPrompt   = false
 
     var settings: SessionSettings {
         didSet { settings.save() }
@@ -28,22 +30,35 @@ final class MeditationViewModel {
     init() {
         settings = SessionSettings.load()
         audio.configure()
-        background.requestPermission()
         observeInterruptions()
         observeForeground()
     }
 
     // MARK: — Session control
 
-    func startSession() {
-        let duration = TimeInterval(settings.totalSeconds)
-        sessionEndDate = Date().addingTimeInterval(duration)
-        remaining  = duration
-        timerState = .running
-        screen     = .activeTimer
-        audio.play(settings.startBell, volume: settings.volume)
-        background.scheduleEnd(after: duration, bell: settings.endBell)
-        scheduleTimer()
+    // Entry point from the Start button — checks notification permission first
+    func requestStart() {
+        Task {
+            let status = await UNUserNotificationCenter.current().notificationSettings().authorizationStatus
+            if status == .notDetermined {
+                showPermissionPrompt = true
+            } else {
+                startSession()
+            }
+        }
+    }
+
+    // Called when user taps "Allow" in the permission prompt
+    func allowNotificationsAndStart() {
+        Task {
+            try? await UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert])
+            startSession()
+        }
+    }
+
+    // Called when user taps "Not Now" — timer still works, bell won't fire when locked
+    func skipNotificationsAndStart() {
+        startSession()
     }
 
     func pause() {
@@ -78,6 +93,17 @@ final class MeditationViewModel {
     }
 
     // MARK: — Private
+
+    private func startSession() {
+        let duration = TimeInterval(settings.totalSeconds)
+        sessionEndDate = Date().addingTimeInterval(duration)
+        remaining  = duration
+        timerState = .running
+        screen     = .activeTimer
+        audio.play(settings.startBell, volume: settings.volume)
+        background.scheduleEnd(after: duration, bell: settings.endBell)
+        scheduleTimer()
+    }
 
     private func tick() {
         guard let endDate = sessionEndDate else { return }

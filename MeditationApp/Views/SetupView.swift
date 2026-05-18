@@ -39,13 +39,19 @@ struct SetupView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 36)
 
-                    Button("Start") { vm.startSession() }
+                    Button("Start") { vm.requestStart() }
                         .buttonStyle(StartButtonStyle())
                         .disabled(vm.settings.totalSeconds == 0)
                         .opacity(vm.settings.totalSeconds == 0 ? 0.35 : 1)
                         .padding(.bottom, 52)
                 }
             }
+        }
+        .alert("Enable Notifications?", isPresented: $vm.showPermissionPrompt) {
+            Button("Allow") { vm.allowNotificationsAndStart() }
+            Button("Not Now", role: .cancel) { vm.skipNotificationsAndStart() }
+        } message: {
+            Text("We'll send one notification when your session ends — useful if you lock your screen mid-session.")
         }
     }
 }

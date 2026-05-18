@@ -5,11 +5,6 @@ import UserNotifications
 final class BackgroundTimerService {
     private let notificationID = "com.meditation.sessionEnd"
 
-    func requestPermission() {
-        UNUserNotificationCenter.current()
-            .requestAuthorization(options: [.sound, .alert]) { _, _ in }
-    }
-
     func scheduleEnd(after seconds: TimeInterval, bell: Bell) {
         guard seconds > 0 else { return }
         cancel()

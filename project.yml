@@ -21,8 +21,6 @@ targets:
       path: MeditationApp/Info.plist
       properties:
         CFBundleDisplayName: Meditate
-        UIBackgroundModes:
-          - audio
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
         UILaunchScreen: {}
