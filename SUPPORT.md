@@ -1,6 +1,6 @@
 # Support — Meditate
 
-Need help or found a bug? Email **koosha@gmail.com** and I'll get back to you, usually within a few days. If you have a GitHub account, you can also [open an issue](https://github.com/kooshap/MeditationApp/issues).
+Need help or found a bug? Email **meditate.timer.app@gmail.com** and I'll get back to you, usually within a few days. If you have a GitHub account, you can also [open an issue](https://github.com/kooshap/MeditationApp/issues).
 
 ## Frequently asked questions
 

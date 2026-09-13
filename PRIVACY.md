@@ -38,4 +38,4 @@ If this policy changes, the updated version will be posted on this page with a n
 
 ## Contact
 
-Questions? Reach out at: koosha@gmail.com
+Questions? Reach out at: meditate.timer.app@gmail.com
