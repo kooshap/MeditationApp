@@ -5,3 +5,10 @@ DerivedData/
 build/
 *.xcuserstate
 .swiftpm/
+
+# Signing and App Store Connect credentials
+*.p8
+*.p12
+*.cer
+*.mobileprovision
+.env
