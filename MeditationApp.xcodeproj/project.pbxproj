@@ -12,6 +12,7 @@
 		AA01000000000003 /* gong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000003 /* gong.mp3 */; };
 		AA01000000000004 /* tibetan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000004 /* tibetan.mp3 */; };
 		AA01000000000005 /* zen_bowl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000005 /* zen_bowl.mp3 */; };
+		AA01000000000006 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000006 /* PrivacyInfo.xcprivacy */; };
 		1D4F2922FF6CAA0B4E269365 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B468FF730D6DC734640C86 /* AudioEngine.swift */; };
 		38A6427FA4616D4F5705C170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC6EB5166AEF1573515805E /* Assets.xcassets */; };
 		6E3D0C9EC3227148D58F8C6D /* BellCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FEBE5786B45501D6C7479 /* BellCarousel.swift */; };
@@ -51,6 +52,7 @@
 		AA02000000000003 /* gong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gong.mp3; sourceTree = "<group>"; };
 		AA02000000000004 /* tibetan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tibetan.mp3; sourceTree = "<group>"; };
 		AA02000000000005 /* zen_bowl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = zen_bowl.mp3; sourceTree = "<group>"; };
+		AA02000000000006 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		EBA0342FC12AF5F4CD87901F /* MeditationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 				E24F07067859AD7042582C7E /* ContentView.swift */,
 				AB67BD8F5BC0AEBC8555BDDA /* Info.plist */,
 				A4DAAB4F242AEB7901B58BF0 /* MeditationAppApp.swift */,
+				AA02000000000006 /* PrivacyInfo.xcprivacy */,
 			);
 			path = MeditationApp;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				AA01000000000003 /* gong.mp3 in Resources */,
 				AA01000000000004 /* tibetan.mp3 in Resources */,
 				AA01000000000005 /* zen_bowl.mp3 in Resources */,
+				AA01000000000006 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
