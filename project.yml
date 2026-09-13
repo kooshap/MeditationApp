@@ -20,6 +20,8 @@ targets:
       path: MeditationApp/Info.plist
       properties:
         CFBundleDisplayName: Meditate
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
         UILaunchScreen: {}
