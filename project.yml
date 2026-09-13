@@ -23,6 +23,7 @@ targets:
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
         UILaunchScreen: {}
+        ITSAppUsesNonExemptEncryption: false
         NSUserNotificationsUsageDescription: "Rings the ending bell when your session completes while the app is in the background."
     settings:
       base:
