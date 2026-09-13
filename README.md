@@ -69,6 +69,11 @@ MeditationApp/
 | Offline | Zero network calls; all assets bundled |
 | Persistence | `UserDefaults` — last duration, start/end bell, volume restored on launch |
 
+## Support & Privacy
+
+- [Support](SUPPORT.md) — FAQ and contact
+- [Privacy Policy](PRIVACY.md)
+
 ## License
 
 Code is released under the [MIT License](LICENSE). The bell sounds in `MeditationApp/Resources/` are dedicated to the public domain under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) — use them anywhere, no attribution required.
