@@ -31,6 +31,7 @@ struct ActiveTimerView: View {
                                 .foregroundStyle(.white.opacity(0.85))
                         }
                         .buttonStyle(TimerControlStyle())
+                        .accessibilityLabel("Pause")
                     } else if vm.timerState == .paused {
                         HStack(spacing: 40) {
                             Button("Finish") { vm.finish() }
@@ -45,6 +46,7 @@ struct ActiveTimerView: View {
                                     .foregroundStyle(.white.opacity(0.85))
                             }
                             .buttonStyle(TimerControlStyle())
+                            .accessibilityLabel("Resume")
                         }
                         .transition(.opacity)
                     }

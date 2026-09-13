@@ -4,7 +4,7 @@ A minimalist, fully offline meditation timer for iOS. No accounts, no network, n
 
 ## Requirements
 
-- Xcode 16+
+- Xcode 26+ (required for App Store uploads)
 - iOS 17+ deployment target
 
 ## Setup

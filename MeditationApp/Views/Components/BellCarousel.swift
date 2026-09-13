@@ -27,6 +27,8 @@ struct BellCarousel: View {
                         .padding(.vertical, 6)
                         .background(mode == m ? Color.white.opacity(0.1) : Color.clear)
                         .clipShape(Capsule())
+                        .accessibilityLabel("\(m.rawValue) bell")
+                        .accessibilityAddTraits(mode == m ? .isSelected : [])
                 }
             }
             .padding(.horizontal, 20)
@@ -71,6 +73,9 @@ private struct BellCell: View {
             }
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(bell.displayName)
+        .accessibilityHint("Selects this bell and plays a preview")
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
         .animation(.easeInOut(duration: 0.15), value: isSelected)
     }
 }

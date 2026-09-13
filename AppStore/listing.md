@@ -51,7 +51,7 @@ Words already in the name and subtitle (meditate, minimal, timer, quiet, bells, 
 
 ## Screenshots — iPhone 6.9" (1320 × 2868)
 
-Upload in this order from `AppStore/screenshots/`:
+Two sets, same order: plain app screens in `AppStore/screenshots/`, or versions with a short caption above each screen in `AppStore/screenshots/captioned/` (recommended — the mostly black screens read better with a line of context). Upload one set:
 
 1. `01-setup.png` — duration picker, bells, volume
 2. `02-timer.png` — countdown in progress

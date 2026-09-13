@@ -23,6 +23,7 @@ targets:
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
         UILaunchScreen: {}
+        UIUserInterfaceStyle: Dark
         ITSAppUsesNonExemptEncryption: false
     settings:
       base:

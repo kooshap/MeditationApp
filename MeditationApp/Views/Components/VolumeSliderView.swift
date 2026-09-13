@@ -8,11 +8,14 @@ struct VolumeSliderView: View {
             Image(systemName: "speaker.fill")
                 .font(.footnote)
                 .foregroundStyle(.white.opacity(0.35))
+                .accessibilityHidden(true)
             Slider(value: $volume, in: 0...1)
                 .tint(Color.white.opacity(0.55))
+                .accessibilityLabel("Volume")
             Image(systemName: "speaker.wave.3.fill")
                 .font(.footnote)
                 .foregroundStyle(.white.opacity(0.35))
+                .accessibilityHidden(true)
         }
     }
 }
