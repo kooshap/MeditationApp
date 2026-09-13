@@ -16,18 +16,22 @@ open MeditationApp.xcodeproj
 
 ## Audio Assets
 
-Drop MP3 files into `MeditationApp/Resources/` before building:
+The bell sounds in `MeditationApp/Resources/` are synthesized, not recorded. [`scripts/generate_bells.py`](scripts/generate_bells.py) builds each one from decaying sine partials tuned to the real instrument, plus a short noise burst for the mallet strike. The MP3s are committed, so the project builds straight from a fresh clone.
 
-| Filename        | Bell        |
-|-----------------|-------------|
-| `tibetan.mp3`   | Tibetan     |
-| `zen_bowl.mp3`  | Zen Bowl    |
-| `crystal.mp3`   | Crystal     |
-| `chime.mp3`     | Chime       |
-| `gong.mp3`      | Gong        |
+| Filename       | Bell     | Character                                              |
+|----------------|----------|--------------------------------------------------------|
+| `tibetan.mp3`  | Tibetan  | Low, warm singing bowl with a slow wobble (8s)         |
+| `zen_bowl.mp3` | Zen Bowl | Higher, clear temple bowl with a crisp strike (8s)     |
+| `crystal.mp3`  | Crystal  | Near-pure quartz bowl tone, soft attack (7s)           |
+| `chime.mp3`    | Chime    | Three tuned tubes struck in quick succession (5s)      |
+| `gong.mp3`     | Gong     | Deep boom with a shimmer that swells in (9s)           |
 
-Free sources: [freesound.org](https://freesound.org) · [zapsplat.com](https://zapsplat.com)  
-Keep files short (~2–5s) and under 200 KB each.
+To tweak a bell, edit its function in the script and regenerate. Output is deterministic, so unchanged bells come out identical:
+
+```bash
+pip install numpy lameenc
+python3 scripts/generate_bells.py
+```
 
 ## Architecture
 
@@ -64,3 +68,7 @@ MeditationApp/
 | Foreground reconciliation | `UIApplication.willEnterForegroundNotification` re-checks clock on return |
 | Offline | Zero network calls; all assets bundled |
 | Persistence | `UserDefaults` — last duration, start/end bell, volume restored on launch |
+
+## License
+
+Code is released under the [MIT License](LICENSE). The bell sounds in `MeditationApp/Resources/` are dedicated to the public domain under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) — use them anywhere, no attribution required.

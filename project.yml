@@ -16,7 +16,6 @@ targets:
       - path: MeditationApp
         excludes:
           - "**/*.md"
-          - Resources/.gitkeep
     info:
       path: MeditationApp/Info.plist
       properties:
