@@ -17,7 +17,18 @@ struct SessionSettings: Codable {
             let data = UserDefaults.standard.data(forKey: storageKey),
             let decoded = try? JSONDecoder().decode(SessionSettings.self, from: data)
         else { return SessionSettings() }
-        return decoded
+        return decoded.clamped()
+    }
+
+    // Stored values aren't trusted: out-of-range numbers would overflow totalSeconds
+    // or break the picker, so pull everything back into what the UI can produce
+    private func clamped() -> SessionSettings {
+        var s = self
+        s.hours   = min(max(hours, 0), 23)
+        s.minutes = min(max(minutes, 0), 59)
+        s.seconds = min(max(seconds, 0), 59)
+        s.volume  = volume.isFinite ? min(max(volume, 0), 1) : SessionSettings().volume
+        return s
     }
 
     func save() {
