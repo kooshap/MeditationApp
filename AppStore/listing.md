@@ -6,8 +6,8 @@ Copy these into App Store Connect. Character limits are Apple's; counts were che
 
 | Field | Value |
 |---|---|
-| Name (30) | `Stillbell: Meditation Timer` |
-| Subtitle (30) | `Simple, offline bell timer` |
+| Name (30) | `Meditate: Minimal Timer` |
+| Subtitle (30) | `Quiet bells, fully offline` |
 | Primary category | Health & Fitness |
 | Secondary category | Lifestyle |
 | Privacy Policy URL | https://github.com/kooshap/MeditationApp/blob/main/PRIVACY.md |
@@ -15,7 +15,7 @@ Copy these into App Store Connect. Character limits are Apple's; counts were che
 | Marketing URL (optional) | https://github.com/kooshap/MeditationApp |
 | Copyright | `2026 Koosha Paridel` |
 
-**About the name:** App Store names must be unique. "Meditate" alone is almost certainly taken or reserved. "Stillbell" had no matches in an App Store search, but only App Store Connect can confirm availability. If you'd rather keep "Meditate", try `Meditate: Bell Timer`. Whichever you choose, keep the home-screen name (`CFBundleDisplayName`, currently "Meditate") and the in-app title close to it — App Review can flag a store name that doesn't match the installed app.
+**About the name:** the home-screen name stays "Meditate" (`CFBundleDisplayName`). The App Store name starts with the same word, which keeps the two consistent for App Review (Apple asks that they be similar). Store names must be unique; App Store Connect confirms availability when you create the app record. If it's taken, `Meditate: Simple Bell Timer` is a close fallback.
 
 ## Promotional text (170)
 
@@ -26,7 +26,7 @@ A quiet timer for sitting practice. Choose how long, pick a bell, and press Star
 ## Description (4000)
 
 ```
-Stillbell is a meditation timer and nothing more. Set how long you want to sit, choose a bell, and press Start. The screen goes dark, the countdown begins, and a bell tells you when you're done.
+Meditate is a timer for sitting practice, and nothing more. Set how long you want to sit, choose a bell, and press Start. The screen goes dark, the countdown begins, and a bell tells you when you're done.
 
 FIVE BELLS
 Tibetan singing bowl, Zen temple bowl, crystal bowl, wind chime, and gong. Choose one bell to open your session and another to close it, and tap any bell to hear it first.
@@ -44,10 +44,10 @@ No account. No ads. No analytics. No internet connection needed. Your settings n
 ## Keywords (100)
 
 ```
-zen,singing bowl,tibetan,gong,mindfulness,calm,breathe,focus,minimal,sit,vipassana,silent,quiet
+meditation,zen,singing bowl,tibetan,gong,mindfulness,calm,breathe,focus,sit,vipassana,silent,chime
 ```
 
-Words already in the name and subtitle (meditation, timer, bell, offline, simple) are left out — Apple indexes those automatically, so repeating them wastes space.
+Words already in the name and subtitle (meditate, minimal, timer, quiet, bells, offline) are left out — Apple indexes those automatically, so repeating them wastes space. "meditation" is included because Apple doesn't reliably match it to "meditate".
 
 ## Screenshots — iPhone 6.9" (1320 × 2868)
 
