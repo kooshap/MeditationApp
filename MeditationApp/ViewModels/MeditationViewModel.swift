@@ -54,7 +54,7 @@ final class MeditationViewModel {
     // Called when user taps "Allow" in the permission prompt
     func allowNotificationsAndStart() {
         Task {
-            try? await UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert])
+            _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert])
             startSession()
         }
     }
@@ -134,7 +134,10 @@ final class MeditationViewModel {
     }
 
     private func scheduleTimer() {
-        let t = Timer(timeInterval: 1.0, repeats: true) { [weak self] _ in self?.tick() }
+        // Scheduled on the main run loop, so the callback is already on the main actor
+        let t = Timer(timeInterval: 1.0, repeats: true) { [weak self] _ in
+            MainActor.assumeIsolated { self?.tick() }
+        }
         RunLoop.main.add(t, forMode: .common)
         timer = t
     }

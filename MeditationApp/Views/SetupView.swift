@@ -3,6 +3,8 @@ import SwiftUI
 struct SetupView: View {
     @Bindable var vm: MeditationViewModel
 
+    private static let privacyPolicyURL = URL(string: "https://github.com/kooshap/MeditationApp/blob/main/PRIVACY.md")!
+
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
@@ -36,11 +38,18 @@ struct SetupView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 36)
 
-                    Button("Start") { vm.requestStart() }
-                        .buttonStyle(StartButtonStyle())
-                        .disabled(vm.settings.totalSeconds == 0)
-                        .opacity(vm.settings.totalSeconds == 0 ? 0.35 : 1)
-                        .padding(.bottom, 52)
+                    VStack(spacing: 20) {
+                        Button("Start") { vm.requestStart() }
+                            .buttonStyle(StartButtonStyle())
+                            .disabled(vm.settings.totalSeconds == 0)
+                            .opacity(vm.settings.totalSeconds == 0 ? 0.35 : 1)
+
+                        // Required by App Review guideline 5.1.1: privacy policy reachable in-app
+                        Link("Privacy Policy", destination: Self.privacyPolicyURL)
+                            .font(.caption)
+                            .foregroundStyle(.white.opacity(0.25))
+                    }
+                    .padding(.bottom, 40)
                 }
             }
         }
