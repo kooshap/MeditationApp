@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
-"""Synthesizes the five bell sounds into MeditationApp/Resources/ as MP3s.
+"""Synthesizes the five bell sounds into MeditationApp/Resources/ as CAF files.
 
 Each bell is additive synthesis: decaying sine partials at the (inharmonic)
 frequency ratios of the real instrument, slow beating between detuned twins,
 and a short filtered-noise transient for the mallet strike. Output is
 deterministic (fixed seed), so re-running reproduces identical files.
 
-Requires: pip install numpy lameenc
-Usage:    python3 scripts/generate_bells.py [--wav-dir DIR]
-"""
-import argparse
-import os
-import wave
+Files are 16-bit PCM CAF so the same sound works for in-app playback and as a
+local notification sound (notifications only accept aiff, wav, or caf).
 
-import lameenc
+Requires: pip install numpy
+Usage:    python3 scripts/generate_bells.py
+"""
+import os
+import struct
+
 import numpy as np
 
 SR = 44100
@@ -149,40 +150,26 @@ def finish(y, trim_db):
     return y
 
 
-def to_pcm(y):
-    return (np.clip(y, -1, 1) * 32767).astype("<i2").tobytes()
-
-
-def write_mp3(path, y):
-    enc = lameenc.Encoder()
-    enc.set_bit_rate(96)
-    enc.set_in_sample_rate(SR)
-    enc.set_channels(1)
-    enc.set_quality(2)
+def write_caf(path, y):
+    """Mono 16-bit little-endian linear PCM in a Core Audio Format container."""
+    pcm = (np.clip(y, -1, 1) * 32767).astype("<i2").tobytes()
+    lpcm_little_endian = 1 << 1
     with open(path, "wb") as f:
-        f.write(enc.encode(to_pcm(y)) + enc.flush())
-
-
-def write_wav(path, y):
-    with wave.open(path, "wb") as w:
-        w.setnchannels(1)
-        w.setsampwidth(2)
-        w.setframerate(SR)
-        w.writeframes(to_pcm(y))
+        f.write(struct.pack(">4sHH", b"caff", 1, 0))
+        # desc: sample rate, format, flags, bytes/packet, frames/packet, channels, bits/channel
+        f.write(struct.pack(">4sq", b"desc", 32))
+        f.write(struct.pack(">d4sIIIII", float(SR), b"lpcm", lpcm_little_endian, 2, 1, 1, 16))
+        # data: 4-byte edit count precedes the samples
+        f.write(struct.pack(">4sqI", b"data", 4 + len(pcm), 0))
+        f.write(pcm)
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--wav-dir", help="also write uncompressed WAVs here")
-    args = parser.parse_args()
-
+    os.makedirs(OUT_DIR, exist_ok=True)
     for name, (make, trim_db) in BELLS.items():
         y = finish(make(), trim_db)
-        path = os.path.join(OUT_DIR, f"{name}.mp3")
-        write_mp3(path, y)
-        if args.wav_dir:
-            os.makedirs(args.wav_dir, exist_ok=True)
-            write_wav(os.path.join(args.wav_dir, f"{name}.wav"), y)
+        path = os.path.join(OUT_DIR, f"{name}.caf")
+        write_caf(path, y)
         peak_db = 20 * np.log10(np.max(np.abs(y)))
         print(f"{name:9s} {len(y) / SR:4.1f}s  peak {peak_db:5.1f} dBFS  {os.path.getsize(path) // 1024} KB")
 

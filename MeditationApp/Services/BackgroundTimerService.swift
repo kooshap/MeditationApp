@@ -13,7 +13,7 @@ final class BackgroundTimerService {
         content.title = "Session Complete"
         content.body  = "Your meditation session has ended."
         content.sound = UNNotificationSound(
-            named: UNNotificationSoundName("\(bell.filename).mp3")
+            named: UNNotificationSoundName("\(bell.filename).caf")
         )
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)

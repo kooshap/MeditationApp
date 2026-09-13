@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA01000000000001 /* chime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000001 /* chime.mp3 */; };
-		AA01000000000002 /* crystal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000002 /* crystal.mp3 */; };
-		AA01000000000003 /* gong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000003 /* gong.mp3 */; };
-		AA01000000000004 /* tibetan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000004 /* tibetan.mp3 */; };
-		AA01000000000005 /* zen_bowl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000005 /* zen_bowl.mp3 */; };
+		AA01000000000001 /* chime.caf in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000001 /* chime.caf */; };
+		AA01000000000002 /* crystal.caf in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000002 /* crystal.caf */; };
+		AA01000000000003 /* gong.caf in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000003 /* gong.caf */; };
+		AA01000000000004 /* tibetan.caf in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000004 /* tibetan.caf */; };
+		AA01000000000005 /* zen_bowl.caf in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000005 /* zen_bowl.caf */; };
 		AA01000000000006 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000006 /* PrivacyInfo.xcprivacy */; };
 		1D4F2922FF6CAA0B4E269365 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B468FF730D6DC734640C86 /* AudioEngine.swift */; };
 		38A6427FA4616D4F5705C170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC6EB5166AEF1573515805E /* Assets.xcassets */; };
@@ -47,11 +47,11 @@
 		D8F4B719E08C4FE5BDE789E7 /* Bell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bell.swift; sourceTree = "<group>"; };
 		E24F07067859AD7042582C7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E2B468FF730D6DC734640C86 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
-		AA02000000000001 /* chime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chime.mp3; sourceTree = "<group>"; };
-		AA02000000000002 /* crystal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crystal.mp3; sourceTree = "<group>"; };
-		AA02000000000003 /* gong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gong.mp3; sourceTree = "<group>"; };
-		AA02000000000004 /* tibetan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tibetan.mp3; sourceTree = "<group>"; };
-		AA02000000000005 /* zen_bowl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = zen_bowl.mp3; sourceTree = "<group>"; };
+		AA02000000000001 /* chime.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = chime.caf; sourceTree = "<group>"; };
+		AA02000000000002 /* crystal.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = crystal.caf; sourceTree = "<group>"; };
+		AA02000000000003 /* gong.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gong.caf; sourceTree = "<group>"; };
+		AA02000000000004 /* tibetan.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tibetan.caf; sourceTree = "<group>"; };
+		AA02000000000005 /* zen_bowl.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = zen_bowl.caf; sourceTree = "<group>"; };
 		AA02000000000006 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		EBA0342FC12AF5F4CD87901F /* MeditationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -132,11 +132,11 @@
 		AA03000000000001 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AA02000000000001 /* chime.mp3 */,
-				AA02000000000002 /* crystal.mp3 */,
-				AA02000000000003 /* gong.mp3 */,
-				AA02000000000004 /* tibetan.mp3 */,
-				AA02000000000005 /* zen_bowl.mp3 */,
+				AA02000000000001 /* chime.caf */,
+				AA02000000000002 /* crystal.caf */,
+				AA02000000000003 /* gong.caf */,
+				AA02000000000004 /* tibetan.caf */,
+				AA02000000000005 /* zen_bowl.caf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -213,11 +213,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A6427FA4616D4F5705C170 /* Assets.xcassets in Resources */,
-				AA01000000000001 /* chime.mp3 in Resources */,
-				AA01000000000002 /* crystal.mp3 in Resources */,
-				AA01000000000003 /* gong.mp3 in Resources */,
-				AA01000000000004 /* tibetan.mp3 in Resources */,
-				AA01000000000005 /* zen_bowl.mp3 in Resources */,
+				AA01000000000001 /* chime.caf in Resources */,
+				AA01000000000002 /* crystal.caf in Resources */,
+				AA01000000000003 /* gong.caf in Resources */,
+				AA01000000000004 /* tibetan.caf in Resources */,
+				AA01000000000005 /* zen_bowl.caf in Resources */,
 				AA01000000000006 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +327,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = minimal.meditation.app;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.kooshap.meditate;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.10;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -349,7 +349,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = minimal.meditation.app;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.kooshap.meditate;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.10;
 				TARGETED_DEVICE_FAMILY = 1;

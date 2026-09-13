@@ -16,20 +16,20 @@ open MeditationApp.xcodeproj
 
 ## Audio Assets
 
-The bell sounds in `MeditationApp/Resources/` are synthesized, not recorded. [`scripts/generate_bells.py`](scripts/generate_bells.py) builds each one from decaying sine partials tuned to the real instrument, plus a short noise burst for the mallet strike. The MP3s are committed, so the project builds straight from a fresh clone.
+The bell sounds in `MeditationApp/Resources/` are synthesized, not recorded. [`scripts/generate_bells.py`](scripts/generate_bells.py) builds each one from decaying sine partials tuned to the real instrument, plus a short noise burst for the mallet strike. They're 16-bit PCM CAF files, so the same sound plays in the app and as the lock-screen notification (notifications don't support MP3). The files are committed, so the project builds straight from a fresh clone.
 
 | Filename       | Bell     | Character                                              |
 |----------------|----------|--------------------------------------------------------|
-| `tibetan.mp3`  | Tibetan  | Low, warm singing bowl with a slow wobble (8s)         |
-| `zen_bowl.mp3` | Zen Bowl | Higher, clear temple bowl with a crisp strike (8s)     |
-| `crystal.mp3`  | Crystal  | Near-pure quartz bowl tone, soft attack (7s)           |
-| `chime.mp3`    | Chime    | Three tuned tubes struck in quick succession (5s)      |
-| `gong.mp3`     | Gong     | Deep boom with a shimmer that swells in (9s)           |
+| `tibetan.caf`  | Tibetan  | Low, warm singing bowl with a slow wobble (8s)         |
+| `zen_bowl.caf` | Zen Bowl | Higher, clear temple bowl with a crisp strike (8s)     |
+| `crystal.caf`  | Crystal  | Near-pure quartz bowl tone, soft attack (7s)           |
+| `chime.caf`    | Chime    | Three tuned tubes struck in quick succession (5s)      |
+| `gong.caf`     | Gong     | Deep boom with a shimmer that swells in (9s)           |
 
 To tweak a bell, edit its function in the script and regenerate. Output is deterministic, so unchanged bells come out identical:
 
 ```bash
-pip install numpy lameenc
+pip install numpy
 python3 scripts/generate_bells.py
 ```
 
