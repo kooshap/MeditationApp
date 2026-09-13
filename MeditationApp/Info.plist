@@ -22,10 +22,6 @@
 	<string>1</string>
 	<key>NSUserNotificationsUsageDescription</key>
 	<string>Rings the ending bell when your session completes while the app is in the background.</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
-	</array>
 	<key>UILaunchScreen</key>
 	<dict/>
 	<key>UISupportedInterfaceOrientations</key>
