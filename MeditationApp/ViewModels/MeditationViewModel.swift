@@ -1,6 +1,5 @@
 import Foundation
 import Observation
-import AVFoundation
 import UIKit
 import UserNotifications
 
@@ -33,7 +32,6 @@ final class MeditationViewModel {
     init() {
         settings = SessionSettings.load()
         audio.configure()
-        observeInterruptions()
         observeForeground()
     }
 
@@ -66,7 +64,9 @@ final class MeditationViewModel {
 
     func pause() {
         guard timerState == .running else { return }
-        // Keep the integer remaining as-is — no clock reconciliation needed
+        syncRemainingToClock()
+        // The clock may say the session already ended, in which case it just completed
+        guard timerState == .running else { return }
         sessionEndDate = nil
         timerState     = .paused
         timer?.invalidate()
@@ -114,8 +114,13 @@ final class MeditationViewModel {
         }
     }
 
-    private func tick() {
-        remaining = max(remaining - 1, 0)
+    // Derive remaining from the end date rather than counting ticks, so a stalled or
+    // suspended app can never freeze the countdown. The timer fires 0–1s after each
+    // whole second since sessionEndDate was set, so ceil() lands on exactly one value
+    // per tick — no half-second flicker.
+    private func syncRemainingToClock() {
+        guard let end = sessionEndDate else { return }
+        remaining = max(ceil(end.timeIntervalSinceNow), 0)
         if remaining == 0 { complete() }
     }
 
@@ -136,27 +141,17 @@ final class MeditationViewModel {
     private func scheduleTimer() {
         // Scheduled on the main run loop, so the callback is already on the main actor
         let t = Timer(timeInterval: 1.0, repeats: true) { [weak self] _ in
-            MainActor.assumeIsolated { self?.tick() }
+            MainActor.assumeIsolated { self?.syncRemainingToClock() }
         }
         RunLoop.main.add(t, forMode: .common)
         timer = t
     }
 
-    // Auto-pause on incoming call or other audio interruption
-    private func observeInterruptions() {
-        NotificationCenter.default.addObserver(
-            forName: AVAudioSession.interruptionNotification,
-            object: nil, queue: .main
-        ) { [weak self] note in
-            guard
-                let raw = note.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt,
-                AVAudioSession.InterruptionType(rawValue: raw) == .began
-            else { return }
-            Task { @MainActor [weak self] in self?.pause() }
-        }
-    }
+    // Audio interruptions deliberately don't pause the session: the app plays no continuous
+    // audio, and iOS deactivates the session on suspension, which used to freeze the timer.
 
-    // Reconcile elapsed time after app returns from background
+    // Update the display right away after returning from background instead of waiting
+    // for the next tick
     private func observeForeground() {
         NotificationCenter.default.addObserver(
             forName: UIApplication.willEnterForegroundNotification,
@@ -164,14 +159,7 @@ final class MeditationViewModel {
         ) { [weak self] _ in
             Task { @MainActor [weak self] in
                 guard let self, self.timerState == .running else { return }
-                guard let end = self.sessionEndDate else { return }
-                let clockRemaining = end.timeIntervalSinceNow
-                if clockRemaining <= 0 {
-                    self.complete()
-                } else {
-                    // Snap display to clock reality after returning from background
-                    self.remaining = ceil(clockRemaining)
-                }
+                self.syncRemainingToClock()
             }
         }
     }

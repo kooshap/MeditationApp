@@ -34,7 +34,7 @@ Tibetan singing bowl, Zen temple bowl, crystal bowl, wind chime, and gong. Choos
 MADE FOR SITTING
 • Distraction-free countdown on a black screen that stays awake
 • The ending bell still rings when your phone is locked
-• Pauses automatically if a call comes in
+• Keeps accurate time through calls and interruptions
 • Remembers your last duration, bells, and volume
 
 PRIVATE BY DESIGN

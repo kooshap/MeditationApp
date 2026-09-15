@@ -41,7 +41,7 @@ MeditationApp/
 │   ├── Bell.swift              — Bell enum (name, icon, filename)
 │   └── SessionSettings.swift  — Codable settings, UserDefaults persistence
 ├── ViewModels/
-│   └── MeditationViewModel.swift  — @Observable state machine; handles timer, audio, interruptions
+│   └── MeditationViewModel.swift  — @Observable state machine; handles timer and audio
 ├── Services/
 │   ├── AudioEngine.swift          — AVAudioPlayer wrapper, AVAudioSession config
 │   └── BackgroundTimerService.swift — UNUserNotificationCenter fallback bell
@@ -64,8 +64,8 @@ MeditationApp/
 | Background timer bell | `UNUserNotificationCenter` scheduled at session start; cancelled on manual finish |
 | Lock-screen bell | Same local notification — fires even when screen is locked |
 | Auto-lock prevention | `UIApplication.shared.isIdleTimerDisabled` toggled in `ActiveTimerView` |
-| Audio interruption pause | `AVAudioSession.interruptionNotification` observer in ViewModel |
-| Foreground reconciliation | `UIApplication.willEnterForegroundNotification` re-checks clock on return |
+| Clock-based countdown | Remaining time derived from the session end date on every tick, so suspension or audio interruptions can't freeze it |
+| Foreground refresh | `UIApplication.willEnterForegroundNotification` updates the display immediately on return |
 | Offline | Zero network calls; all assets bundled |
 | Persistence | `UserDefaults` — last duration, start/end bell, volume restored on launch |
 

@@ -16,6 +16,8 @@ final class AudioEngine: NSObject {
     func play(_ bell: Bell, volume: Float) {
         guard let url = Bundle.main.url(forResource: bell.filename, withExtension: "caf"),
               let data = try? Data(contentsOf: url) else { return }
+        // The system may have deactivated the session (call, suspension) since configure()
+        try? AVAudioSession.sharedInstance().setActive(true)
         player?.stop()
         player = try? AVAudioPlayer(data: data)
         player?.volume = volume
