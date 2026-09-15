@@ -58,6 +58,8 @@ Two sets, same order: plain app screens in `AppStore/screenshots/`, or versions 
 3. `03-paused.png` — paused, with Finish and Resume
 4. `04-complete.png` — session complete
 
+If App Store Connect only shows the **6.5" Display** slot, it rejects 1320 × 2868. Use `AppStore/screenshots/captioned-6.5/` instead (1284 × 2778: scaled to width 1284, then about 6px of empty background trimmed from the top and bottom).
+
 ## App Review notes (4000)
 
 ```
