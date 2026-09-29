@@ -24,8 +24,7 @@ struct SetupView: View {
                     .frame(height: 180)
 
                     BellCarousel(
-                        startBell: $vm.settings.startBell,
-                        endBell:   $vm.settings.endBell,
+                        selection: $vm.settings.bell,
                         onPreview: { vm.previewBell($0) }
                     )
 

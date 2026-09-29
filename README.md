@@ -67,7 +67,7 @@ MeditationApp/
 | Clock-based countdown | Remaining time derived from the session end date on every tick, so suspension or audio interruptions can't freeze it |
 | Foreground refresh | `UIApplication.willEnterForegroundNotification` updates the display immediately on return |
 | Offline | Zero network calls; all assets bundled |
-| Persistence | `UserDefaults` — last duration, start/end bell, volume restored on launch |
+| Persistence | `UserDefaults` — last duration, bell, volume restored on launch |
 
 ## Support & Privacy
 

@@ -1,53 +1,24 @@
 import SwiftUI
 
 struct BellCarousel: View {
-    @Binding var startBell: Bell
-    @Binding var endBell: Bell
+    @Binding var selection: Bell
     var onPreview: (Bell) -> Void
 
-    @State private var mode: Mode = .start
-
-    private enum Mode: String, CaseIterable {
-        case start = "Start"
-        case end   = "End"
-    }
-
-    private var active: Bell { mode == .start ? startBell : endBell }
-
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            // Start / End toggle
-            HStack(spacing: 0) {
-                ForEach(Mode.allCases, id: \.self) { m in
-                    Button(m.rawValue) { mode = m }
-                        .font(.subheadline)
-                        .fontWeight(mode == m ? .semibold : .regular)
-                        .foregroundStyle(mode == m ? .white : .white.opacity(0.35))
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 6)
-                        .background(mode == m ? Color.white.opacity(0.1) : Color.clear)
-                        .clipShape(Capsule())
-                        .accessibilityLabel("\(m.rawValue) bell")
-                        .accessibilityAddTraits(mode == m ? .isSelected : [])
-                }
+        HStack(spacing: 0) {
+            ForEach(Bell.allCases, id: \.self) { bell in
+                BellCell(
+                    bell: bell,
+                    isSelected: selection == bell,
+                    onTap: {
+                        selection = bell
+                        onPreview(bell)
+                    }
+                )
+                .frame(maxWidth: .infinity)
             }
-            .padding(.horizontal, 20)
-
-            HStack(spacing: 0) {
-                ForEach(Bell.allCases, id: \.self) { bell in
-                    BellCell(
-                        bell: bell,
-                        isSelected: active == bell,
-                        onTap: {
-                            if mode == .start { startBell = bell } else { endBell = bell }
-                            onPreview(bell)
-                        }
-                    )
-                    .frame(maxWidth: .infinity)
-                }
-            }
-            .padding(.horizontal, 12)
         }
+        .padding(.horizontal, 12)
     }
 }
 

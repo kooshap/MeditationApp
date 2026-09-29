@@ -4,11 +4,39 @@ struct SessionSettings: Codable {
     var hours: Int   = 0
     var minutes: Int = 10
     var seconds: Int = 0
-    var startBell: Bell  = .tibetan
-    var endBell: Bell    = .tibetan
+    var bell: Bell       = .tibetan   // rung at both the start and the end of a session
     var volume: Float    = 0.8
 
     var totalSeconds: Int { hours * 3600 + minutes * 60 + seconds }
+
+    init() {}
+
+    private enum CodingKeys: String, CodingKey {
+        case hours, minutes, seconds, bell, volume
+        case startBell  // legacy: separate start/end bells, read only for migration
+    }
+
+    // Older installs saved startBell/endBell instead of bell; carry the start bell over
+    // rather than failing to decode and losing the rest of the saved settings
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        hours   = try c.decode(Int.self, forKey: .hours)
+        minutes = try c.decode(Int.self, forKey: .minutes)
+        seconds = try c.decode(Int.self, forKey: .seconds)
+        volume  = try c.decode(Float.self, forKey: .volume)
+        bell    = try c.decodeIfPresent(Bell.self, forKey: .bell)
+            ?? c.decodeIfPresent(Bell.self, forKey: .startBell)
+            ?? .tibetan
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var c = encoder.container(keyedBy: CodingKeys.self)
+        try c.encode(hours, forKey: .hours)
+        try c.encode(minutes, forKey: .minutes)
+        try c.encode(seconds, forKey: .seconds)
+        try c.encode(bell, forKey: .bell)
+        try c.encode(volume, forKey: .volume)
+    }
 
     private static let storageKey = "com.meditation.settings"
 

@@ -66,7 +66,7 @@ If App Store Connect only shows the **6.5" Display** slot, it rejects 1320 × 28
 No sign-in is required; all features are available on launch.
 
 To test:
-1. Choose a short duration (e.g. 0h 0m 10s), pick start and end bells, and tap Start.
+1. Choose a short duration (e.g. 0h 0m 10s), pick a bell, and tap Start.
 2. The app asks whether to enable notifications. Allowing them lets the ending bell ring as a local notification if the screen is locked mid-session.
 3. Lock the device during the session; the ending bell arrives as a notification when time is up.
 
