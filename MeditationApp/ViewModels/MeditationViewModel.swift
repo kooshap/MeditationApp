@@ -15,6 +15,7 @@ final class MeditationViewModel {
     var timerState: TimerState = .idle
     var remaining: TimeInterval = 0
     var showPermissionPrompt   = false
+    private(set) var practice  = PracticeLog.load()
 
     var settings: SessionSettings {
         didSet {
@@ -25,6 +26,7 @@ final class MeditationViewModel {
 
     // MARK: — Private
     private var sessionEndDate: Date?
+    private var sessionDuration: TimeInterval = 0
     private var timer: Timer?
     private let audio      = AudioEngine()
     private let background = BackgroundTimerService()
@@ -83,6 +85,8 @@ final class MeditationViewModel {
     }
 
     func finish() {
+        // Ending early still counts toward the streak once a full minute has been sat
+        if sessionDuration - remaining >= 60 { practice.record() }
         cleanup()
         screen = .setup
     }
@@ -99,6 +103,7 @@ final class MeditationViewModel {
 
     private func startSession() {
         let duration = TimeInterval(settings.totalSeconds)
+        sessionDuration = duration
         remaining  = duration
         timerState = .running
         screen     = .activeTimer
@@ -125,6 +130,7 @@ final class MeditationViewModel {
     }
 
     private func complete() {
+        practice.record()
         cleanup()
         audio.play(settings.bell, volume: settings.volume)
         screen = .sessionComplete

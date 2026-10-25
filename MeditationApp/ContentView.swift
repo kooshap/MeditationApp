@@ -14,7 +14,7 @@ struct ContentView: View {
                 ActiveTimerView(vm: vm)
                     .transition(.opacity)
             } else if vm.screen == .sessionComplete {
-                SessionCompleteView(onDismiss: { vm.dismissComplete() })
+                SessionCompleteView(practice: vm.practice, onDismiss: { vm.dismissComplete() })
                     .transition(.opacity)
             }
         }

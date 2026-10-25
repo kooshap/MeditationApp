@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SessionCompleteView: View {
+    let practice: PracticeLog
     var onDismiss: () -> Void
 
     var body: some View {
@@ -16,6 +17,10 @@ struct SessionCompleteView: View {
                     .font(.caption)
                     .foregroundStyle(.white.opacity(0.28))
             }
+
+            StreakView(log: practice)
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                .padding(.bottom, 72)
         }
         .contentShape(Rectangle())
         .onTapGesture { onDismiss() }

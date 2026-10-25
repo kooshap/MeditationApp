@@ -16,6 +16,8 @@ struct SetupView: View {
                         .foregroundStyle(.white.opacity(0.55))
                         .padding(.top, 32)
 
+                    StreakView(log: vm.practice)
+
                     DurationWheelPicker(
                         hours:   $vm.settings.hours,
                         minutes: $vm.settings.minutes,

@@ -13,6 +13,8 @@
 		AA01000000000004 /* tibetan.caf in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000004 /* tibetan.caf */; };
 		AA01000000000005 /* zen_bowl.caf in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000005 /* zen_bowl.caf */; };
 		AA01000000000006 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AA02000000000006 /* PrivacyInfo.xcprivacy */; };
+		AA01000000000007 /* PracticeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA02000000000007 /* PracticeLog.swift */; };
+		AA01000000000008 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA02000000000008 /* StreakView.swift */; };
 		1D4F2922FF6CAA0B4E269365 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B468FF730D6DC734640C86 /* AudioEngine.swift */; };
 		38A6427FA4616D4F5705C170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC6EB5166AEF1573515805E /* Assets.xcassets */; };
 		6E3D0C9EC3227148D58F8C6D /* BellCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FEBE5786B45501D6C7479 /* BellCarousel.swift */; };
@@ -53,6 +55,8 @@
 		AA02000000000004 /* tibetan.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tibetan.caf; sourceTree = "<group>"; };
 		AA02000000000005 /* zen_bowl.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = zen_bowl.caf; sourceTree = "<group>"; };
 		AA02000000000006 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		AA02000000000007 /* PracticeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeLog.swift; sourceTree = "<group>"; };
+		AA02000000000008 /* StreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
 		EBA0342FC12AF5F4CD87901F /* MeditationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				D8F4B719E08C4FE5BDE789E7 /* Bell.swift */,
+				AA02000000000007 /* PracticeLog.swift */,
 				26BC409316A7359610F0902E /* SessionSettings.swift */,
 			);
 			path = Models;
@@ -99,6 +104,7 @@
 			children = (
 				D63FEBE5786B45501D6C7479 /* BellCarousel.swift */,
 				01CB3BF02009954DF1749D84 /* DurationWheelPicker.swift */,
+				AA02000000000008 /* StreakView.swift */,
 				34FB257CB48B3DA775662CA6 /* VolumeSliderView.swift */,
 			);
 			path = Components;
@@ -239,9 +245,11 @@
 				CBF67D0AE5C887C81BE28CE3 /* DurationWheelPicker.swift in Sources */,
 				CBAE89D596C852223BDD02D3 /* MeditationAppApp.swift in Sources */,
 				D0CDAB23457C9A6EB2241E43 /* MeditationViewModel.swift in Sources */,
+				AA01000000000007 /* PracticeLog.swift in Sources */,
 				70BDB7D89FAD200DFE3065E5 /* SessionCompleteView.swift in Sources */,
 				97715A0F24EAB408A8F4DA11 /* SessionSettings.swift in Sources */,
 				BA01ED65D297A0087EB30D84 /* SetupView.swift in Sources */,
+				AA01000000000008 /* StreakView.swift in Sources */,
 				D39A17E4F5A09C4B769D8878 /* VolumeSliderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

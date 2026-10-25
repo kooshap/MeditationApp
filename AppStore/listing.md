@@ -35,10 +35,11 @@ MADE FOR SITTING
 • Distraction-free countdown on a black screen that stays awake
 • The ending bell still rings when your phone is locked
 • Keeps accurate time through calls and interruptions
+• A quiet streak: seven dots show the days you sat this past week
 • Remembers your last duration, bells, and volume
 
 PRIVATE BY DESIGN
-No account. No ads. No analytics. No internet connection needed. Your settings never leave your device.
+No account. No ads. No analytics. No internet connection needed. Your settings and streak never leave your device.
 ```
 
 ## Keywords (100)
@@ -81,4 +82,4 @@ Every content question is "None" / "No": no violence, sexual content, profanity,
 
 ## App Privacy — draft answer
 
-**Data Not Collected.** Matches `PRIVACY.md` and `PrivacyInfo.xcprivacy`: settings stay on device in `UserDefaults`, notifications are local, and there are no network calls.
+**Data Not Collected.** Matches `PRIVACY.md` and `PrivacyInfo.xcprivacy`: settings and the days meditated stay on device in `UserDefaults`, notifications are local, and there are no network calls.

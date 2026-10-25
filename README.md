@@ -39,7 +39,8 @@ python3 scripts/generate_bells.py
 MeditationApp/
 ├── Models/
 │   ├── Bell.swift              — Bell enum (name, icon, filename)
-│   └── SessionSettings.swift  — Codable settings, UserDefaults persistence
+│   ├── SessionSettings.swift  — Codable settings, UserDefaults persistence
+│   └── PracticeLog.swift      — Days meditated (local calendar days), streak math
 ├── ViewModels/
 │   └── MeditationViewModel.swift  — @Observable state machine; handles timer and audio
 ├── Services/
@@ -52,6 +53,7 @@ MeditationApp/
     ├── Components/
     │   ├── DurationWheelPicker.swift  — UIPickerView (UIViewRepresentable) with haptics
     │   ├── BellCarousel.swift         — Horizontal bell selector with instant audio preview
+    │   ├── StreakView.swift           — Streak count and dots for the last seven days
     │   └── VolumeSliderView.swift
     └── Styles/
         └── ButtonStyles.swift     — StartButtonStyle, TimerControlStyle
@@ -68,6 +70,7 @@ MeditationApp/
 | Foreground refresh | `UIApplication.willEnterForegroundNotification` updates the display immediately on return |
 | Offline | Zero network calls; all assets bundled |
 | Persistence | `UserDefaults` — last duration, bell, volume restored on launch |
+| Streak | A day counts when a session completes, or is finished early after at least a minute. The streak survives until a whole day is missed; dots show the last seven days, ending today |
 
 ## Support & Privacy
 
