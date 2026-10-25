@@ -10,7 +10,7 @@ Meditate does not collect, transmit, or share any personal data. Ever.
 
 **Data collection:** None. The app makes no network requests and has no analytics, crash reporting, advertising, or third-party SDKs. Because no data is collected, none is shared with third parties.
 
-**Data stored on your device:** Your timer preferences (duration, selected bells, volume) and the dates you meditated (used to show your streak) are saved locally using iOS system storage (`UserDefaults`). Only the date is kept, not the time or length of a session. This data never leaves your device.
+**Data stored on your device:** Your timer preferences (duration, selected bell, volume) and the dates you meditated (used to show your streak) are saved locally using iOS system storage (`UserDefaults`). Only the date is kept, not the time or length of a session. This data never leaves your device.
 
 **Notifications:** The app requests permission to send local notifications solely to ring the ending bell when your session completes while the screen is locked. These notifications are generated and delivered entirely on-device — no data is sent to any server.
 

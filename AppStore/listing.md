@@ -29,14 +29,14 @@ A quiet timer for sitting practice. Choose how long, pick a bell, and press Star
 Meditate is a timer for sitting practice, and nothing more. Set how long you want to sit, choose a bell, and press Start. The screen goes dark, the countdown begins, and a bell tells you when you're done.
 
 FIVE BELLS
-Tibetan singing bowl, Zen temple bowl, crystal bowl, wind chime, and gong. Choose one bell to open your session and another to close it, and tap any bell to hear it first.
+Tibetan singing bowl, Zen temple bowl, crystal bowl, wind chime, and gong. Your bell rings once to open your session and again to close it. Tap any bell to hear it first.
 
 MADE FOR SITTING
 • Distraction-free countdown on a black screen that stays awake
 • The ending bell still rings when your phone is locked
 • Keeps accurate time through calls and interruptions
 • A quiet streak: seven dots show the days you sat this past week
-• Remembers your last duration, bells, and volume
+• Remembers your last duration, bell, and volume
 
 PRIVATE BY DESIGN
 No account. No ads. No analytics. No internet connection needed. Your settings and streak never leave your device.
@@ -54,10 +54,10 @@ Words already in the name and subtitle (meditate, minimal, timer, quiet, bells, 
 
 Two sets, same order: plain app screens in `AppStore/screenshots/`, or versions with a short caption above each screen in `AppStore/screenshots/captioned/` (recommended — the mostly black screens read better with a line of context). Upload one set:
 
-1. `01-setup.png` — duration picker, bells, volume
+1. `01-setup.png` — streak, duration picker, bells, volume
 2. `02-timer.png` — countdown in progress
 3. `03-paused.png` — paused, with Finish and Resume
-4. `04-complete.png` — session complete
+4. `04-complete.png` — session complete, with streak
 
 If App Store Connect only shows the **6.5" Display** slot, it rejects 1320 × 2868. Use `AppStore/screenshots/captioned-6.5/` instead (1284 × 2778: scaled to width 1284, then about 6px of empty background trimmed from the top and bottom).
 

@@ -13,8 +13,11 @@ No. The timer keeps running through calls and other interruptions, and the endin
 **Why does my screen stay on during a session?**
 So you can glance at the remaining time without unlocking. The screen goes back to normal auto-lock once the session ends. You can also lock the phone manually — the ending bell will still ring (see above).
 
+**What counts toward my streak?**
+A day counts once a session runs to the end, or once you finish early after sitting for at least a minute. Your streak lasts as long as you don't miss a whole day, so it isn't lost in the morning before you've sat.
+
 **Does the app need an internet connection?**
 No. Everything works offline, and the app never sends any data anywhere.
 
 **How do I delete my data?**
-The only data is your timer preferences (duration, bells, volume), stored on your device. Deleting the app removes them. See the [privacy policy](PRIVACY.md) for details.
+The only data is your timer preferences (duration, bell, volume) and the dates you meditated, stored on your device. Deleting the app removes them. See the [privacy policy](PRIVACY.md) for details.
