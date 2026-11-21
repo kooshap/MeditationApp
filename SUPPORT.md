@@ -5,13 +5,13 @@ Need help or found a bug? Email **meditate.timer.app@gmail.com** and I'll get ba
 ## Frequently asked questions
 
 **The ending bell doesn't ring when my phone is locked.**
-When the screen is locked, the ending bell is delivered as a notification. Check that notifications are allowed in **Settings → Notifications → Meditate**. Notification sounds also follow your ringer switch and Focus settings, so a silenced phone or an active Focus can mute the bell. While the app is open on screen, the bell plays regardless.
+The bell rings from the app itself, so it needs the app open on screen. The screen stays awake during a session for exactly this reason. If you lock the phone or switch apps, the session keeps time, and when you come back after it has ended you'll see it complete and hear the bell then.
 
 **Does a phone call pause my session?**
-No. The timer keeps running through calls and other interruptions, and the ending bell still rings on time. Tap pause if you want to stop the clock.
+No. The timer keeps running through calls and other interruptions. If the session ends while you're away from the app, the bell rings when you return. Tap pause if you want to stop the clock.
 
 **Why does my screen stay on during a session?**
-So you can glance at the remaining time without unlocking. The screen goes back to normal auto-lock once the session ends. You can also lock the phone manually — the ending bell will still ring (see above).
+So you can glance at the remaining time without unlocking, and so the ending bell can ring on time. The screen goes back to normal auto-lock once the session ends.
 
 **What counts toward my streak?**
 A day counts once a session runs to the end, or once you finish early after sitting for at least a minute. Your streak lasts as long as you don't miss a whole day, so it isn't lost in the morning before you've sat.

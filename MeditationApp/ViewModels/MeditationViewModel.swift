@@ -1,7 +1,6 @@
 import Foundation
 import Observation
 import UIKit
-import UserNotifications
 
 @Observable
 @MainActor
@@ -14,7 +13,6 @@ final class MeditationViewModel {
     var screen: AppScreen      = .setup
     var timerState: TimerState = .idle
     var remaining: TimeInterval = 0
-    var showPermissionPrompt   = false
     private(set) var practice  = PracticeLog.load()
 
     var settings: SessionSettings {
@@ -28,8 +26,7 @@ final class MeditationViewModel {
     private var sessionEndDate: Date?
     private var sessionDuration: TimeInterval = 0
     private var timer: Timer?
-    private let audio      = AudioEngine()
-    private let background = BackgroundTimerService()
+    private let audio = AudioEngine()
 
     init() {
         settings = SessionSettings.load()
@@ -39,29 +36,21 @@ final class MeditationViewModel {
 
     // MARK: — Session control
 
-    // Entry point from the Start button — checks notification permission first
-    func requestStart() {
-        Task {
-            let status = await UNUserNotificationCenter.current().notificationSettings().authorizationStatus
-            if status == .notDetermined {
-                showPermissionPrompt = true
-            } else {
-                startSession()
-            }
-        }
-    }
+    func start() {
+        let duration = TimeInterval(settings.totalSeconds)
+        sessionDuration = duration
+        remaining  = duration
+        timerState = .running
+        screen     = .activeTimer
+        audio.play(settings.bell, volume: settings.volume)
 
-    // Called when user taps "Allow" in the permission prompt
-    func allowNotificationsAndStart() {
+        // Delay countdown until the screen transition finishes (0.55s in ContentView)
+        // so the first second is never visually clipped
         Task {
-            _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert])
-            startSession()
+            try? await Task.sleep(for: .milliseconds(600))
+            sessionEndDate = Date().addingTimeInterval(remaining)
+            scheduleTimer()
         }
-    }
-
-    // Called when user taps "Not Now" — timer still works, bell won't fire when locked
-    func skipNotificationsAndStart() {
-        startSession()
     }
 
     func pause() {
@@ -73,14 +62,12 @@ final class MeditationViewModel {
         timerState     = .paused
         timer?.invalidate()
         timer = nil
-        background.cancel()
     }
 
     func resume() {
         guard timerState == .paused else { return }
         sessionEndDate = Date().addingTimeInterval(remaining)
         timerState     = .running
-        background.scheduleEnd(after: remaining, bell: settings.bell)
         scheduleTimer()
     }
 
@@ -100,24 +87,6 @@ final class MeditationViewModel {
     }
 
     // MARK: — Private
-
-    private func startSession() {
-        let duration = TimeInterval(settings.totalSeconds)
-        sessionDuration = duration
-        remaining  = duration
-        timerState = .running
-        screen     = .activeTimer
-        audio.play(settings.bell, volume: settings.volume)
-
-        // Delay countdown until the screen transition finishes (0.55s in ContentView)
-        // so the first second is never visually clipped
-        Task {
-            try? await Task.sleep(for: .milliseconds(600))
-            sessionEndDate = Date().addingTimeInterval(remaining)
-            background.scheduleEnd(after: remaining, bell: settings.bell)
-            scheduleTimer()
-        }
-    }
 
     // Derive remaining from the end date rather than counting ticks, so a stalled or
     // suspended app can never freeze the countdown. The timer fires 0–1s after each
@@ -141,7 +110,6 @@ final class MeditationViewModel {
         timer          = nil
         timerState     = .idle
         sessionEndDate = nil
-        background.cancel()
     }
 
     private func scheduleTimer() {
@@ -157,7 +125,7 @@ final class MeditationViewModel {
     // audio, and iOS deactivates the session on suspension, which used to freeze the timer.
 
     // Update the display right away after returning from background instead of waiting
-    // for the next tick
+    // for the next tick. If the session ended while away, this completes it and rings the bell.
     private func observeForeground() {
         NotificationCenter.default.addObserver(
             forName: UIApplication.willEnterForegroundNotification,

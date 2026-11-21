@@ -33,7 +33,6 @@ Tibetan singing bowl, Zen temple bowl, crystal bowl, wind chime, and gong. Your 
 
 MADE FOR SITTING
 • Distraction-free countdown on a black screen that stays awake
-• The ending bell still rings when your phone is locked
 • Keeps accurate time through calls and interruptions
 • A quiet streak: seven dots show the days you sat this past week
 • Remembers your last duration, bell, and volume
@@ -68,8 +67,9 @@ No sign-in is required; all features are available on launch.
 
 To test:
 1. Choose a short duration (e.g. 0h 0m 10s), pick a bell, and tap Start.
-2. The app asks whether to enable notifications. Allowing them lets the ending bell ring as a local notification if the screen is locked mid-session.
-3. Lock the device during the session; the ending bell arrives as a notification when time is up.
+2. The countdown runs on a dark screen that stays awake; the bell rings again when time is up.
+
+The app requests no permissions and sends no notifications.
 
 The app is fully offline: no network requests, no analytics, no third-party SDKs. The Privacy Policy link is at the bottom of the main screen. All bell sounds are original, synthesized for this app.
 ```
@@ -82,4 +82,4 @@ Every content question is "None" / "No": no violence, sexual content, profanity,
 
 ## App Privacy — draft answer
 
-**Data Not Collected.** Matches `PRIVACY.md` and `PrivacyInfo.xcprivacy`: settings and the days meditated stay on device in `UserDefaults`, notifications are local, and there are no network calls.
+**Data Not Collected.** Matches `PRIVACY.md` and `PrivacyInfo.xcprivacy`: settings and the days meditated stay on device in `UserDefaults`, and there are no network calls.

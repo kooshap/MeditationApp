@@ -6,8 +6,7 @@ frequency ratios of the real instrument, slow beating between detuned twins,
 and a short filtered-noise transient for the mallet strike. Output is
 deterministic (fixed seed), so re-running reproduces identical files.
 
-Files are 16-bit PCM CAF so the same sound works for in-app playback and as a
-local notification sound (notifications only accept aiff, wav, or caf).
+Files are 16-bit PCM CAF, played in-app with AVAudioPlayer.
 
 Requires: pip install numpy
 Usage:    python3 scripts/generate_bells.py

@@ -28,6 +28,6 @@ enum Bell: String, CaseIterable, Codable {
         }
     }
 
-    // Bundled as Resources/<filename>.caf — CAF because notification sounds don't support MP3
+    // Bundled as Resources/<filename>.caf
     var filename: String { rawValue }
 }

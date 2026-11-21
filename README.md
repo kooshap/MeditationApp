@@ -16,7 +16,7 @@ open MeditationApp.xcodeproj
 
 ## Audio Assets
 
-The bell sounds in `MeditationApp/Resources/` are synthesized, not recorded. [`scripts/generate_bells.py`](scripts/generate_bells.py) builds each one from decaying sine partials tuned to the real instrument, plus a short noise burst for the mallet strike. They're 16-bit PCM CAF files, so the same sound plays in the app and as the lock-screen notification (notifications don't support MP3). The files are committed, so the project builds straight from a fresh clone.
+The bell sounds in `MeditationApp/Resources/` are synthesized, not recorded. [`scripts/generate_bells.py`](scripts/generate_bells.py) builds each one from decaying sine partials tuned to the real instrument, plus a short noise burst for the mallet strike. They're 16-bit PCM CAF files. The files are committed, so the project builds straight from a fresh clone.
 
 | Filename       | Bell     | Character                                              |
 |----------------|----------|--------------------------------------------------------|
@@ -44,8 +44,7 @@ MeditationApp/
 ├── ViewModels/
 │   └── MeditationViewModel.swift  — @Observable state machine; handles timer and audio
 ├── Services/
-│   ├── AudioEngine.swift          — AVAudioPlayer wrapper, AVAudioSession config
-│   └── BackgroundTimerService.swift — UNUserNotificationCenter fallback bell
+│   └── AudioEngine.swift          — AVAudioPlayer wrapper, AVAudioSession config
 └── Views/
     ├── SetupView.swift            — Duration picker, bell carousel, volume, start button
     ├── ActiveTimerView.swift      — Distraction-free dark countdown; disables auto-lock
@@ -63,12 +62,11 @@ MeditationApp/
 
 | Feature | Implementation |
 |---|---|
-| Background timer bell | `UNUserNotificationCenter` scheduled at session start; cancelled on manual finish |
-| Lock-screen bell | Same local notification — fires even when screen is locked |
 | Auto-lock prevention | `UIApplication.shared.isIdleTimerDisabled` toggled in `ActiveTimerView` |
 | Clock-based countdown | Remaining time derived from the session end date on every tick, so suspension or audio interruptions can't freeze it |
-| Foreground refresh | `UIApplication.willEnterForegroundNotification` updates the display immediately on return |
+| Foreground refresh | `UIApplication.willEnterForegroundNotification` updates the display immediately on return; if the session ended while away, it completes and the bell rings then |
 | Offline | Zero network calls; all assets bundled |
+| Permissions | None — no notifications or other permission prompts |
 | Persistence | `UserDefaults` — last duration, bell, volume restored on launch |
 | Streak | A day counts when a session completes, or is finished early after at least a minute. The streak survives until a whole day is missed; dots show the last seven days, ending today |
 
