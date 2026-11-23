@@ -67,6 +67,8 @@ Two sets, same order: plain app screens in `AppStore/screenshots/`, or versions 
 
 If App Store Connect only shows the **6.5" Display** slot, it rejects 1320 × 2868. Use `AppStore/screenshots/captioned-6.5/` instead (1284 × 2778: scaled to width 1284, then about 6px of empty background trimmed from the top and bottom).
 
+**Required slot — iPhone with Dynamic Island (medium display), 6.1"/6.3":** App Store Connect requires this set and rejects the 6.9" files there. Upload `AppStore/screenshots/captioned-6.3/` (1206 × 2622: scaled from the 6.9" set, 1px of side background trimmed). The 6.9" set goes in the optional large-display slot via Media Manager.
+
 ## App Review notes (4000)
 
 ```
