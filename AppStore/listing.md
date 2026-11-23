@@ -20,7 +20,7 @@ Copy these into App Store Connect. Character limits are Apple's; counts were che
 ## Promotional text (170)
 
 ```
-A quiet timer for sitting practice. Choose how long, pick a bell, and press Start. No accounts, no ads, no tracking — just bells and silence.
+A quiet timer for sitting practice. No account, no permissions, no ads, no tracking, and no internet needed. Just bells and silence.
 ```
 
 ## Description (4000)
@@ -37,8 +37,15 @@ MADE FOR SITTING
 • A quiet streak: seven dots show the days you sat this past week
 • Remembers your last duration, bell, and volume
 
-PRIVATE BY DESIGN
-No account. No ads. No analytics. No internet connection needed. Your settings and streak never leave your device.
+NOTHING ELSE
+• No account or sign-up
+• No permissions: the app never asks for access to anything on your phone
+• No notifications
+• No internet connection needed: works fully offline, even in airplane mode
+• No data collection, analytics, or tracking
+• No ads, subscriptions, or in-app purchases
+
+Your settings and the days you sat are stored only on your device. Delete the app and they're gone.
 ```
 
 ## Keywords (100)
@@ -56,7 +63,7 @@ Two sets, same order: plain app screens in `AppStore/screenshots/`, or versions 
 1. `01-setup.png` — streak, duration picker, bells, volume
 2. `02-timer.png` — countdown in progress
 3. `03-paused.png` — paused, with Finish and Resume
-4. `04-complete.png` — session complete, with streak
+4. `04-complete.png` — session complete, with streak (caption: "A bell to finish. A streak to keep.")
 
 If App Store Connect only shows the **6.5" Display** slot, it rejects 1320 × 2868. Use `AppStore/screenshots/captioned-6.5/` instead (1284 × 2778: scaled to width 1284, then about 6px of empty background trimmed from the top and bottom).
 
